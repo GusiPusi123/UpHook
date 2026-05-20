@@ -28,6 +28,7 @@ public class SwithSceneAnim : MonoBehaviour
     {
         // Запускаем анимацию
         animator.SetTrigger(triggerName);
+        Time.timeScale = 1f;
 
         // Ждём указанное время (длительность анимации)
         yield return new WaitForSeconds(delay);

@@ -1,10 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI; // Для работы с UI Button
 
 public class ButtonEscPanel : MonoBehaviour
 {
     public GameObject pausePanel;
+    public Button closeButton; // UI кнопка, которую можно назначить через инспектор
 
     private bool isPaused = false;
+
+    void Start()
+    {
+        if (closeButton != null)
+        {
+            closeButton.onClick.AddListener(ClosePausePanel);
+        }
+    }
 
     void Update()
     {
@@ -27,21 +37,28 @@ public class ButtonEscPanel : MonoBehaviour
         ManageCursorAndTime(isPaused);
     }
 
-    private void ManageCursorAndTime(bool pauseState)
+    public void ManageCursorAndTime(bool pauseState)
     {
         if (pauseState)
         {
-            // Открываем панель: отключаем управление, показываем курсор, ставим игру на паузу
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
         }
         else
         {
-            // Закрываем панель: включаем управление, скрываем курсор, продолжаем игру
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
+        }
+    }
+
+    // Метод вызывается при нажатии на UI кнопку
+    public void ClosePausePanel()
+    {
+        if (isPaused)
+        {
+            TogglePause();
         }
     }
 }
