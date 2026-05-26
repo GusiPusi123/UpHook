@@ -145,6 +145,9 @@ MonoBehaviour:
   interactKey: 101
   interactionText: {fileID: 0}
   sceneName: GameMenu
+  delay: 2
+  animator: {fileID: 0}
+  triggerName: Start
   player: {fileID: 0}
 --- !u!1 &5624250494432221506
 GameObject:

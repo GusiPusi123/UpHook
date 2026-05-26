@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameUpHookLevel1.unity
     guid: aa0f80f58498ca343a957830ec1afb3f
+  - enabled: 1
+    path: Assets/Scenes/GameUpHookLevel2.unity
+    guid: a53fe4383192c8b44a87a798906b3965
   m_configObjects: {}
